@@ -240,3 +240,58 @@ display:none;
     color:#666;
     line-height:1.7;
 }
+
+.food-ai{
+    padding:100px 0;
+    background:#fff;
+}
+
+.food-ai-container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+}
+
+.food-ai-image{
+    flex:1;
+}
+
+.food-ai-image img{
+    width:100%;
+}
+
+.food-ai-content{
+    flex:1;
+}
+
+.tag{
+    display:inline-block;
+    padding:8px 18px;
+    background:#eef6ff;
+    color:#1f6bff;
+    border-radius:30px;
+    margin-bottom:20px;
+    font-weight:600;
+}
+
+.food-ai-content h2{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.food-ai-content p{
+    color:#666;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.food-list{
+    list-style:none;
+    margin-bottom:30px;
+}
+
+.food-list li{
+    margin-bottom:15px;
+    font-size:18px;
+}

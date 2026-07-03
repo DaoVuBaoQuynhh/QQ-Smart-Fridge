@@ -54,3 +54,20 @@
     }
 
 }
+
+@media (max-width:991px){
+
+    .food-ai-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .food-ai-content h2{
+        font-size:34px;
+    }
+
+    .food-list{
+        padding:0;
+    }
+
+}
