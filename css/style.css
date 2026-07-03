@@ -1,0 +1,41 @@
+/* ===== KHỞI TẠO TRANG ===== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Inter,sans-serif;
+    background:#F6F6F6;
+    color:#111;
+}
+
+img{
+    display:block;
+    width:100%;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+button{
+    border:none;
+    cursor:pointer;
+}
+
+.container{
+    width:min(1200px,90%);
+    margin:auto;
+}
