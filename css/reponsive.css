@@ -71,3 +71,20 @@
     }
 
 }
+
+@media (max-width:991px){
+
+    .expiration-container{
+        flex-direction:column-reverse;
+        text-align:center;
+    }
+
+    .expiration-content h2{
+        font-size:34px;
+    }
+
+    .expiration-item{
+        text-align:left;
+    }
+
+}
