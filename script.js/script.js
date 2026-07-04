@@ -546,3 +546,334 @@ setInterval(createSnow,500);
 window.addEventListener("load",()=>{
     console.log("QQ Smart AI Cooling Ready");
 });
+
+/*==================================================
+            ECO ENERGY MODE
+==================================================*/
+
+const todayPower = document.getElementById("todayPower");
+const todayCost = document.getElementById("todayCost");
+const savingPercent = document.getElementById("savingPercent");
+const livePower = document.getElementById("livePower");
+const energyProgress = document.getElementById("energyProgress");
+
+const energyModes = document.querySelectorAll(".energy-mode");
+const bars = document.querySelectorAll(".energy-chart .bar");
+
+let currentEnergyMode = "ECO";
+
+/*====================================
+        CHANGE MODE
+====================================*/
+
+energyModes.forEach(button => {
+
+    button.addEventListener("click", function(){
+
+        energyModes.forEach(btn=>btn.classList.remove("active"));
+
+        this.classList.add("active");
+
+        currentEnergyMode = this.innerText;
+
+        if(currentEnergyMode==="ECO"){
+
+            livePower.innerHTML="320 W";
+
+            savingPercent.innerHTML="45%";
+
+            todayPower.innerHTML="0.92 kWh";
+
+            todayCost.innerHTML="$0.16";
+
+            energyProgress.style.width="90%";
+
+        }
+
+        else if(currentEnergyMode==="NORMAL"){
+
+            livePower.innerHTML="430 W";
+
+            savingPercent.innerHTML="30%";
+
+            todayPower.innerHTML="1.18 kWh";
+
+            todayCost.innerHTML="$0.22";
+
+            energyProgress.style.width="65%";
+
+        }
+
+        else{
+
+            livePower.innerHTML="610 W";
+
+            savingPercent.innerHTML="12%";
+
+            todayPower.innerHTML="1.65 kWh";
+
+            todayCost.innerHTML="$0.34";
+
+            energyProgress.style.width="40%";
+
+        }
+
+    });
+
+});
+
+
+/*====================================
+        LIVE POWER
+====================================*/
+
+setInterval(()=>{
+
+    let power;
+
+    if(currentEnergyMode==="ECO"){
+
+        power = 300 + Math.floor(Math.random()*40);
+
+    }
+
+    else if(currentEnergyMode==="NORMAL"){
+
+        power = 420 + Math.floor(Math.random()*60);
+
+    }
+
+    else{
+
+        power = 580 + Math.floor(Math.random()*80);
+
+    }
+
+    livePower.innerHTML = power + " W";
+
+},2000);
+
+
+/*====================================
+        ENERGY SAVING
+====================================*/
+
+setInterval(()=>{
+
+    let save;
+
+    if(currentEnergyMode==="ECO"){
+
+        save = 40 + Math.floor(Math.random()*8);
+
+    }
+
+    else if(currentEnergyMode==="NORMAL"){
+
+        save = 28 + Math.floor(Math.random()*5);
+
+    }
+
+    else{
+
+        save = 10 + Math.floor(Math.random()*5);
+
+    }
+
+    savingPercent.innerHTML = save + "%";
+
+},3000);
+
+
+/*====================================
+        DAILY POWER
+====================================*/
+
+setInterval(()=>{
+
+    let value;
+
+    if(currentEnergyMode==="ECO"){
+
+        value=(0.9+Math.random()*0.2).toFixed(2);
+
+    }
+
+    else if(currentEnergyMode==="NORMAL"){
+
+        value=(1.1+Math.random()*0.3).toFixed(2);
+
+    }
+
+    else{
+value=(1.5+Math.random()*0.4).toFixed(2);
+
+    }
+
+    todayPower.innerHTML=value+" kWh";
+
+},4000);
+
+
+/*====================================
+        ELECTRIC COST
+====================================*/
+
+setInterval(()=>{
+
+    let cost;
+
+    if(currentEnergyMode==="ECO"){
+
+        cost=(0.15+Math.random()*0.03).toFixed(2);
+
+    }
+
+    else if(currentEnergyMode==="NORMAL"){
+
+        cost=(0.21+Math.random()*0.04).toFixed(2);
+
+    }
+
+    else{
+
+        cost=(0.31+Math.random()*0.05).toFixed(2);
+
+    }
+
+    todayCost.innerHTML="$"+cost;
+
+},4500);
+
+
+/*====================================
+        BAR CHART
+====================================*/
+
+setInterval(()=>{
+
+    bars.forEach(bar=>{
+
+        let height=40+Math.floor(Math.random()*60);
+
+        bar.style.height=height+"%";
+
+    });
+
+},2500);
+
+
+/*====================================
+        AI PROGRESS
+====================================*/
+
+let progress = 80;
+
+setInterval(()=>{
+
+    progress += Math.floor(Math.random()*8)-3;
+
+    if(progress<35){
+
+        progress=35;
+
+    }
+
+    if(progress>100){
+
+        progress=100;
+
+    }
+
+    energyProgress.style.width=progress+"%";
+
+},2000);
+
+
+/*====================================
+        AUTO ECO MODE
+====================================*/
+
+function autoEcoMode(){
+
+    const hour = new Date().getHours();
+
+    if(hour>=22 || hour<=6){
+
+        currentEnergyMode="ECO";
+
+    }
+
+}
+
+setInterval(autoEcoMode,60000);
+
+
+/*====================================
+        AI NOTIFICATION
+====================================*/
+
+const suggestions=[
+
+"AI optimized cooling successfully.",
+
+"Electricity consumption decreased.",
+
+"Night Eco Mode activated.",
+
+"Temperature optimized automatically.",
+
+"Saving electricity with AI.",
+
+"Compressor speed adjusted.",
+
+"Power usage analyzed.",
+
+"Weekly report updated."
+
+];
+
+function randomSuggestion(){
+
+    const cards=document.querySelectorAll(".control-card");
+
+    const lastCard=cards[cards.length-1];
+
+    const ul=lastCard.querySelector("ul");
+
+    const index=Math.floor(Math.random()*suggestions.length);
+
+    ul.innerHTML="";
+
+    suggestions.forEach((text,i)=>{
+
+        const li=document.createElement("li");
+
+        if(i===index){
+
+            li.innerHTML="⚡ "+text;
+
+        }else{
+
+            li.innerHTML="✔ "+text;
+
+        }
+
+        ul.appendChild(li);
+
+    });
+
+}
+
+setInterval(randomSuggestion,6000);
+
+
+/*====================================
+        START
+====================================*/
+
+window.addEventListener("load",()=>{
+
+    console.log("QQ Smart Eco Energy Ready");
+
+});

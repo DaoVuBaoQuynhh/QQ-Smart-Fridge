@@ -335,3 +335,261 @@ padding:20px;
         font-size:28px;
     }
 }
+
+@media screen and (max-width:1200px){
+
+    .energy-wrapper{
+
+        grid-template-columns:1fr;
+
+        gap:40px;
+
+    }
+
+}
+
+/*==========================================
+                TABLET
+==========================================*/
+
+@media screen and (max-width:992px){
+
+    .energy{
+
+        padding:90px 0;
+
+    }
+
+    .energy-screen{
+
+        grid-template-columns:repeat(3,1fr);
+
+    }
+
+    .screen-item h2{
+
+        font-size:24px;
+
+    }
+
+    .energy-chart{
+
+        height:220px;
+
+    }
+
+    #livePower{
+
+        font-size:40px;
+
+    }
+
+}
+
+/*==========================================
+                MOBILE
+==========================================*/
+
+@media screen and (max-width:768px){
+
+    .energy{
+
+        padding:70px 20px;
+
+    }
+
+    .energy-wrapper{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .energy-dashboard{
+
+        padding:25px;
+
+    }
+
+    .dashboard-header{
+
+        flex-direction:column;
+
+        gap:10px;
+
+        text-align:center;
+
+    }
+
+    .dashboard-header h3{
+
+        font-size:24px;
+
+    }
+
+    .energy-screen{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .screen-item{
+
+        width:100%;
+
+    }
+
+    .energy-chart{
+
+        height:180px;
+
+        gap:8px;
+
+    }
+
+    .bar span{
+
+        font-size:12px;
+
+    }
+
+    .mode-group{
+
+        flex-direction:column;
+
+    }
+
+    .energy-mode{
+
+        width:100%;
+
+    }
+
+    .energy-control .control-card{
+
+        padding:20px;
+
+    }
+
+    #livePower{
+
+        font-size:34px;
+
+    }
+
+}
+
+/*==========================================
+            SMALL MOBILE
+==========================================*/
+
+@media screen and (max-width:576px){
+
+    .energy{
+
+        padding:60px 15px;
+
+    }
+
+    .energy-dashboard{
+
+        border-radius:20px;
+
+        padding:20px;
+
+    }
+
+    .screen-item{
+
+        padding:18px;
+
+    }
+
+    .screen-item h2{
+
+        font-size:22px;
+
+    }
+
+    .energy-chart{
+
+        height:150px;
+
+    }
+
+    .bar{
+
+        border-radius:6px 6px 0 0;
+
+    }
+
+    .energy-control .control-card{
+
+        padding:18px;
+
+        border-radius:18px;
+
+    }
+
+    .energy-control h3{
+
+        font-size:18px;
+
+    }
+
+    #livePower{
+
+        font-size:30px;
+
+    }
+
+}
+
+/*==========================================
+            EXTRA SMALL
+==========================================*/
+
+@media screen and (max-width:400px){
+
+    .energy .section-title h2{
+
+        font-size:28px;
+
+    }
+
+    .dashboard-header h3{
+
+        font-size:20px;
+
+    }
+
+    .screen-item h2{
+
+        font-size:20px;
+
+    }
+
+    .energy-chart{
+
+        height:130px;
+
+    }
+
+    .bar span{
+
+        font-size:10px;
+
+    }
+
+    .energy-mode{
+
+        padding:14px;
+
+        font-size:14px;
+
+    }
+
+    #livePower{
+
+        font-size:26px;
+    }
+}
