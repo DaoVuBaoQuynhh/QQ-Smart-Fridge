@@ -1476,3 +1476,226 @@ window.addEventListener("load",()=>{
     console.log("Child Lock Ready");
 
 });
+
+
+/*==================================================
+        TECHNICAL SPECIFICATION
+==================================================*/
+
+const progressBars = document.querySelectorAll(".progress-fill");
+const progressValues = [99, 98, 96, 97];
+
+const featureCards = document.querySelectorAll(".feature-box");
+
+const specRows = document.querySelectorAll(".spec-row");
+
+const tableRows = document.querySelectorAll(".table-card tbody tr");
+
+const performanceCard = document.querySelector(".performance-card");
+
+/*=================================
+        ANIMATE PROGRESS
+==================================*/
+
+function animateProgress(){
+
+    progressBars.forEach((bar,index)=>{
+
+        bar.style.width="0";
+
+        setTimeout(()=>{
+
+            bar.style.width=progressValues[index]+"%";
+
+        },300*index);
+
+    });
+
+}
+
+animateProgress();
+
+
+/*=================================
+        HOVER CARD
+==================================*/
+
+featureCards.forEach(card=>{
+
+    card.addEventListener("mouseenter",()=>{
+
+        card.style.transform="translateY(-10px) scale(1.03)";
+
+    });
+
+    card.addEventListener("mouseleave",()=>{
+
+        card.style.transform="translateY(0) scale(1)";
+
+    });
+
+});
+
+
+/*=================================
+        SPEC ROW
+==================================*/
+
+specRows.forEach(row=>{
+
+    row.addEventListener("mouseenter",()=>{
+
+        row.style.background="#f5f9ff";
+
+        row.style.paddingLeft="10px";
+
+    });
+
+    row.addEventListener("mouseleave",()=>{
+
+        row.style.background="transparent";
+
+        row.style.paddingLeft="0";
+
+    });
+
+});
+
+
+/*=================================
+        TABLE EFFECT
+==================================*/
+
+tableRows.forEach(row=>{
+
+    row.addEventListener("mouseenter",()=>{
+
+        row.style.background="#eef5ff";
+
+    });
+
+    row.addEventListener("mouseleave",()=>{
+
+        row.style.background="";
+
+    });
+
+});
+
+
+/*=================================
+        PERFORMANCE PULSE
+==================================*/
+
+setInterval(()=>{
+
+    performanceCard.style.transform="scale(1.02)";
+
+    setTimeout(()=>{
+
+        performanceCard.style.transform="scale(1)";
+
+    },500);
+
+},3500);
+
+
+/*=================================
+        RANDOM AI SCORE
+==================================*/
+
+const progressText=document.querySelectorAll(".progress-item span");
+
+setInterval(()=>{
+
+    progressText[0].innerHTML=(98+Math.floor(Math.random()*2))+"%";
+
+    progressText[1].innerHTML=(97+Math.floor(Math.random()*2))+"%";
+
+    progressText[2].innerHTML=(95+Math.floor(Math.random()*2))+"%";
+
+    progressText[3].innerHTML=(96+Math.floor(Math.random()*2))+"%";
+
+},5000);
+
+
+/*=================================
+        ICON ROTATE
+==================================*/
+
+featureCards.forEach(card=>{
+
+    const icon=card.querySelector("i");
+
+    card.addEventListener("mouseenter",()=>{
+
+        icon.style.transform="rotate(360deg) scale(1.15)";
+
+        icon.style.transition=".6s";
+
+    });
+card.addEventListener("mouseleave",()=>{
+
+        icon.style.transform="rotate(0deg) scale(1)";
+
+    });
+
+});
+
+
+/*=================================
+        SCROLL ANIMATION
+==================================*/
+
+const observer=new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.style.opacity="1";
+
+            entry.target.style.transform="translateY(0)";
+
+        }
+
+    });
+
+},{
+    threshold:0.2
+});
+
+document.querySelectorAll(".spec-card,.feature-box,.performance-card,.table-card")
+.forEach(item=>{
+
+    item.style.opacity="0";
+
+    item.style.transform="translateY(50px)";
+
+    item.style.transition=".8s";
+
+    observer.observe(item);
+
+});
+
+
+/*=================================
+        AUTO REFRESH
+==================================*/
+
+setInterval(()=>{
+
+    animateProgress();
+
+},10000);
+
+
+/*=================================
+        START
+==================================*/
+
+window.addEventListener("load",()=>{
+
+    console.log("Technical Specification Ready");
+
+});
