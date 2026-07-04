@@ -1408,3 +1408,165 @@ padding:20px;
     }
 
 }
+
+@media (max-width:1200px){
+
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:40px;
+    }
+
+}
+
+@media (max-width:992px){
+
+    .footer{
+        padding:70px 0 25px;
+    }
+
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:35px;
+    }
+
+    .footer-logo{
+        font-size:30px;
+    }
+
+    .footer-column h3{
+        font-size:20px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .footer{
+        padding:60px 20px 20px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .footer-column{
+        text-align:center;
+    }
+
+    .footer-column p{
+        margin-bottom:20px;
+    }
+
+    .social-links{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    .footer-column ul{
+        padding:0;
+    }
+
+    .footer-column ul li{
+        margin-bottom:12px;
+    }
+
+    .footer-column ul li a:hover{
+        padding-left:0;
+    }
+
+    #newsletterForm{
+        max-width:420px;
+        margin:0 auto;
+    }
+
+    .footer-bottom{
+        margin-top:40px;
+    }
+
+    #backTop{
+        right:20px;
+        bottom:20px;
+        width:50px;
+        height:50px;
+        font-size:20px;
+    }
+
+}
+
+@media (max-width:576px){
+
+    .footer{
+        padding:50px 15px 20px;
+    }
+
+    .footer-logo{
+        font-size:28px;
+    }
+
+    .footer-column h3{
+        font-size:18px;
+    }
+
+    .footer-column p,
+    .footer-column ul li a{
+        font-size:15px;
+    }
+
+    .social-links a{
+        width:42px;
+        height:42px;
+        line-height:42px;
+        font-size:16px;
+    }
+
+    #newsletterForm input,
+    #newsletterForm button{
+        padding:14px;
+        font-size:15px;
+    }
+
+    .footer-bottom p{
+        font-size:14px;
+    }
+
+    #backTop{
+        width:46px;
+        height:46px;
+        font-size:18px;
+        right:15px;
+        bottom:15px;
+    }
+
+}
+
+@media (max-width:400px){
+
+    .footer-logo{
+        font-size:24px;
+    }
+
+    .footer-column h3{
+        font-size:17px;
+    }
+
+    .footer-column p{
+        font-size:14px;
+        line-height:1.7;
+    }
+
+    .social-links{
+        gap:10px;
+    }
+
+    .social-links a{
+        width:40px;
+        height:40px;
+        line-height:40px;
+    }
+
+    #newsletterForm{
+        width:100%;
+    }
+
+}

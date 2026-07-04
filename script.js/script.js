@@ -1883,3 +1883,216 @@ window.addEventListener("load",()=>{
     console.log("Contact Section Ready");
 
 });
+
+
+/*==================================================
+                    FOOTER
+==================================================*/
+
+const backTop = document.getElementById("backTop");
+
+/*=================================
+        BACK TO TOP
+==================================*/
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY>400){
+
+        backTop.style.display="flex";
+
+        backTop.style.alignItems="center";
+
+        backTop.style.justifyContent="center";
+
+    }else{
+
+        backTop.style.display="none";
+
+    }
+
+});
+
+backTop.addEventListener("click",()=>{
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+});
+
+
+/*=================================
+        NEWSLETTER
+==================================*/
+
+const newsletterForm=document.getElementById("newsletterForm");
+
+if(newsletterForm){
+
+    newsletterForm.addEventListener("submit",(e)=>{
+
+        e.preventDefault();
+
+        const email=document.getElementById("newsletterEmail");
+
+        if(email.value.trim()==""){
+
+            alert("Please enter your email.");
+
+            return;
+
+        }
+
+        const pattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if(!pattern.test(email.value)){
+
+            alert("Please enter a valid email.");
+
+            return;
+
+        }
+
+        const btn=newsletterForm.querySelector("button");
+
+        btn.disabled=true;
+
+        btn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Subscribing...';
+
+        setTimeout(()=>{
+
+            btn.innerHTML='<i class="fa-solid fa-circle-check"></i> Subscribed';
+
+            btn.style.background="#28a745";
+
+            email.value="";
+
+            setTimeout(()=>{
+
+                btn.innerHTML="Subscribe";
+
+                btn.style.background="";
+
+                btn.disabled=false;
+
+            },2500);
+
+        },1800);
+
+    });
+
+}
+
+
+/*=================================
+        SOCIAL ICON
+==================================*/
+
+document.querySelectorAll(".social-links a").forEach(icon=>{
+
+    icon.addEventListener("mouseenter",()=>{
+
+        icon.style.transform="translateY(-6px) rotate(360deg)";
+
+    });
+
+    icon.addEventListener("mouseleave",()=>{
+
+        icon.style.transform="translateY(0) rotate(0deg)";
+
+    });
+
+});
+
+
+/*=================================
+        FOOTER LINK
+==================================*/
+
+document.querySelectorAll(".footer-column ul li a").forEach(link=>{
+
+    link.addEventListener("mouseenter",()=>{
+
+        link.style.paddingLeft="10px";
+
+    });
+
+    link.addEventListener("mouseleave",()=>{
+
+        link.style.paddingLeft="0";
+
+    });
+
+});
+
+
+/*=================================
+        SCROLL ANIMATION
+==================================*/
+
+const footerObserver=new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.style.opacity="1";
+
+            entry.target.style.transform="translateY(0)";
+
+        }
+
+    });
+
+},{
+    threshold:0.2
+});
+document.querySelectorAll(".footer-column,.footer-bottom")
+.forEach(item=>{
+
+    item.style.opacity="0";
+
+    item.style.transform="translateY(40px)";
+
+    item.style.transition=".8s";
+
+    footerObserver.observe(item);
+
+});
+
+
+/*=================================
+        BUTTON PULSE
+==================================*/
+
+setInterval(()=>{
+
+    if(backTop.style.display==="flex"){
+
+        backTop.style.transform="scale(1.08)";
+
+        setTimeout(()=>{
+
+            backTop.style.transform="scale(1)";
+
+        },300);
+
+    }
+
+},2500);
+
+
+/*=================================
+        START
+==================================*/
+
+window.addEventListener("load",()=>{
+
+    console.log("Footer Ready");
+
+});
