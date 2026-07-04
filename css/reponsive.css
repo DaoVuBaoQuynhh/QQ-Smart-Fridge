@@ -593,3 +593,291 @@ padding:20px;
         font-size:26px;
     }
 }
+
+
+/*==================================================
+            INSIDE VIEW RESPONSIVE
+==================================================*/
+
+@media screen and (max-width:1200px){
+
+    .inside-wrapper{
+
+        grid-template-columns:1fr;
+
+        gap:40px;
+
+    }
+
+    .phone-panel{
+
+        justify-content:center;
+
+    }
+
+    .inside-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/*====================================
+            TABLET
+====================================*/
+
+@media screen and (max-width:992px){
+
+    .inside-view{
+
+        padding:90px 0;
+
+    }
+
+    .camera-screen img{
+
+        height:380px;
+
+    }
+
+    .phone{
+
+        width:280px;
+
+    }
+
+    .phone-camera img{
+
+        height:450px;
+
+    }
+
+    .inside-bottom{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/*====================================
+            MOBILE
+====================================*/
+
+@media screen and (max-width:768px){
+
+    .inside-view{
+
+        padding:70px 20px;
+
+    }
+
+    .inside-wrapper{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .camera-panel{
+
+        padding:20px;
+
+    }
+
+    .camera-header{
+
+        flex-direction:column;
+
+        gap:10px;
+
+        text-align:center;
+
+    }
+
+    .camera-header h3{
+
+        font-size:24px;
+
+    }
+
+    .camera-screen img{
+
+        height:300px;
+
+    }
+
+    .camera-control{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .camera-control button{
+
+        width:100%;
+
+    }
+
+    .phone{
+
+        width:260px;
+
+    }
+
+    .phone-camera img{
+
+        height:400px;
+
+    }
+
+    .inside-grid{
+
+        grid-template-columns:1fr;
+
+        gap:20px;
+
+    }
+
+    .inside-card{
+
+        padding:25px;
+
+    }
+
+    .inside-bottom{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/*====================================
+        SMALL MOBILE
+====================================*/
+
+@media screen and (max-width:576px){
+
+    .inside-view{
+
+        padding:60px 15px;
+
+    }
+
+    .camera-panel{
+
+        border-radius:20px;
+
+    }
+
+    .camera-screen img{
+
+        height:250px;
+
+    }
+
+    .camera-overlay{
+
+        flex-direction:column;
+
+        gap:6px;
+
+        font-size:12px;
+
+        left:10px;
+
+        bottom:10px;
+
+    }
+
+    .phone{
+
+        width:230px;
+
+        border-radius:30px;
+
+    }
+
+    .phone-camera img{
+
+        height:340px;
+
+    }
+
+    .phone-footer button{
+
+        width:50px;
+
+        height:50px;
+
+        font-size:18px;
+
+    }
+
+    .inside-card h2{
+
+        font-size:32px;
+
+    }
+
+    .inside-info,
+
+    .inside-stat{
+
+        padding:25px;
+
+    }
+
+}
+
+/*====================================
+        EXTRA SMALL
+====================================*/
+
+@media screen and (max-width:400px){
+
+    .camera-header h3{
+
+        font-size:20px;
+
+    }
+
+    .camera-screen img{
+
+        height:220px;
+
+    }
+
+    .phone{
+
+        width:210px;
+
+    }
+
+    .phone-camera img{
+
+        height:300px;
+
+    }
+
+    .inside-card{
+
+        padding:20px;
+
+    }
+
+    .inside-card h2{
+
+        font-size:28px;
+
+    }
+.camera-control button{
+
+        font-size:14px;
+
+        padding:12px;
+
+    }
+
+}

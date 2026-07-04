@@ -877,3 +877,287 @@ window.addEventListener("load",()=>{
     console.log("QQ Smart Eco Energy Ready");
 
 });
+
+
+/*==================================================
+                INSIDE VIEW
+==================================================*/
+
+const cameraImage = document.querySelector(".camera-screen img");
+const phoneCamera = document.getElementById("phoneCamera");
+
+const zoomIn = document.getElementById("zoomIn");
+const zoomOut = document.getElementById("zoomOut");
+const nightMode = document.getElementById("nightMode");
+const snapshot = document.getElementById("snapshot");
+
+const vegetableCount = document.getElementById("vegetableCount");
+const drinkCount = document.getElementById("drinkCount");
+const meatCount = document.getElementById("meatCount");
+const eggCount = document.getElementById("eggCount");
+
+let scale = 1;
+let night = false;
+
+/*==============================
+        ZOOM IN
+==============================*/
+
+zoomIn.addEventListener("click", () => {
+
+    scale += 0.1;
+
+    if(scale > 2){
+
+        scale = 2;
+
+    }
+
+    cameraImage.style.transform = `scale(${scale})`;
+    phoneCamera.style.transform = `scale(${scale})`;
+
+});
+
+
+/*==============================
+        ZOOM OUT
+==============================*/
+
+zoomOut.addEventListener("click", () => {
+
+    scale -= 0.1;
+
+    if(scale < 1){
+
+        scale = 1;
+
+    }
+
+    cameraImage.style.transform = `scale(${scale})`;
+    phoneCamera.style.transform = `scale(${scale})`;
+
+});
+
+
+/*==============================
+        NIGHT MODE
+==============================*/
+
+nightMode.addEventListener("click", () => {
+
+    night = !night;
+
+    if(night){
+
+        cameraImage.style.filter =
+        "brightness(55%) contrast(130%) hue-rotate(80deg)";
+
+        phoneCamera.style.filter =
+        "brightness(55%) contrast(130%) hue-rotate(80deg)";
+
+        nightMode.innerHTML = "☀ Day Vision";
+
+    }else{
+
+        cameraImage.style.filter = "none";
+        phoneCamera.style.filter = "none";
+
+        nightMode.innerHTML = "🌙 Night Vision";
+
+    }
+
+});
+
+
+/*==============================
+        SNAPSHOT
+==============================*/
+
+snapshot.addEventListener("click", () => {
+
+    snapshot.innerHTML = "✔ Saved";
+
+    snapshot.style.background = "#28a745";
+
+    setTimeout(() => {
+
+        snapshot.innerHTML = "📸 Snapshot";
+
+        snapshot.style.background = "";
+
+    },2000);
+
+});
+
+
+/*==============================
+        LIVE BLINK
+==============================*/
+
+setInterval(() => {
+
+    const dots = document.querySelectorAll(".live-dot,.record-dot");
+
+    dots.forEach(dot=>{
+
+        dot.style.opacity =
+        dot.style.opacity=="0.2" ? "1" : "0.2";
+
+    });
+
+},700);
+
+
+/*==============================
+        RANDOM FOOD
+==============================*/
+
+setInterval(()=>{
+
+    vegetableCount.innerHTML =
+    Math.floor(Math.random()*10)+8;
+
+    drinkCount.innerHTML =
+    Math.floor(Math.random()*8)+15;
+
+    meatCount.innerHTML =
+    Math.floor(Math.random()*5)+5;
+
+    eggCount.innerHTML =
+    Math.floor(Math.random()*8)+18;
+
+},5000);
+
+
+/*==============================
+        PHONE LIVE
+==============================*/
+
+const phoneLive =
+document.querySelector(".phone-live");
+
+setInterval(()=>{
+
+    phoneLive.style.opacity =
+    phoneLive.style.opacity=="0.4"
+    ? "1"
+    : "0.4";
+
+},600);
+
+
+/*==============================
+        CAMERA SHAKE
+==============================*/
+
+setInterval(()=>{
+
+    cameraImage.style.transform =
+    `translateX(${Math.random()*2-1}px)
+     translateY(${Math.random()*2-1}px)
+     scale(${scale})`;
+
+    phoneCamera.style.transform =
+    `translateX(${Math.random()*2-1}px)
+     translateY(${Math.random()*2-1}px)
+     scale(${scale})`;
+
+},120);
+
+
+/*==============================
+        AI MESSAGE
+==============================*/
+
+const aiMessages=[
+
+"AI detected fresh vegetables.",
+
+"Camera synchronized successfully.",
+
+"Temperature is stable.",
+
+"Cloud backup completed.",
+
+"Door has not been opened recently.",
+
+"Food recognition completed.",
+
+"All cameras online.",
+
+"Remote monitoring active."
+
+];
+
+const aiList =
+document.querySelector(".inside-info ul");
+
+setInterval(()=>{
+
+    aiList.innerHTML="";
+
+    aiMessages.forEach(msg=>{
+
+        const li=document.createElement("li");
+
+        li.innerHTML="✔ "+msg;
+
+        aiList.appendChild(li);
+
+    });
+
+},7000);
+
+
+/*==============================
+        CAMERA QUALITY
+==============================*/
+
+const statItems =
+document.querySelectorAll(".stat-item strong");
+
+setInterval(()=>{
+
+    statItems[0].innerHTML="Full HD";
+
+    statItems[1].innerHTML=
+    58+Math.floor(Math.random()*3)+" FPS";
+
+    statItems[2].innerHTML="Cloud Backup";
+
+    statItems[3].innerHTML="Active";
+
+},4000);
+
+
+/*==============================
+        BUTTON HOVER SOUND
+==============================*/
+
+document.querySelectorAll(".camera-control button")
+.forEach(button=>{
+
+    button.addEventListener("mouseenter",()=>{
+
+        button.style.transform="scale(1.05)";
+
+    });
+
+    button.addEventListener("mouseleave",()=>{
+
+        button.style.transform="scale(1)";
+
+    });
+
+});
+
+
+/*==============================
+        START
+==============================*/
+
+window.addEventListener("load",()=>{
+
+    console.log("Inside View Ready");
+
+});
