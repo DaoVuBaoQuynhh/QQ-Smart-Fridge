@@ -1161,3 +1161,318 @@ window.addEventListener("load",()=>{
     console.log("Inside View Ready");
 
 });
+
+
+/*==================================================
+                CHILD LOCK SYSTEM
+==================================================*/
+
+const keys = document.querySelectorAll(".key");
+const passwordDisplay = document.getElementById("passwordDisplay");
+const lockMessage = document.getElementById("lockMessage");
+const lockStatus = document.getElementById("lockStatus");
+const unlockBtn = document.getElementById("unlockBtn");
+const clearPin = document.getElementById("clearPin");
+const mobileUnlock = document.getElementById("mobileUnlock");
+
+const securityLevel = document.getElementById("securityLevel");
+const failedAttempts = document.getElementById("failedAttempts");
+
+const activityList = document.getElementById("activityList");
+
+const lockIcon = document.querySelector(".lock-icon i");
+
+let pin = "";
+let fail = 0;
+
+const correctPin = "1234";
+
+/*==============================
+        DISPLAY PIN
+==============================*/
+
+function updateDisplay(){
+
+    let text = "";
+
+    for(let i=0;i<pin.length;i++){
+
+        text += "● ";
+
+    }
+
+    for(let i=pin.length;i<4;i++){
+
+        text += "○ ";
+
+    }
+
+    passwordDisplay.innerHTML = text;
+
+}
+
+updateDisplay();
+
+
+/*==============================
+        INPUT NUMBER
+==============================*/
+
+keys.forEach(key=>{
+
+    key.addEventListener("click",()=>{
+
+        if(pin.length>=4) return;
+
+        pin += key.innerText;
+
+        updateDisplay();
+
+    });
+
+});
+
+
+/*==============================
+        CLEAR
+==============================*/
+
+clearPin.addEventListener("click",()=>{
+
+    pin="";
+
+    updateDisplay();
+
+    lockMessage.innerHTML="PIN cleared.";
+
+});
+
+
+/*==============================
+        UNLOCK
+==============================*/
+
+unlockBtn.addEventListener("click",()=>{
+
+    if(pin===correctPin){
+
+        unlockSuccess();
+
+    }else{
+
+        unlockFail();
+
+    }
+
+});
+
+
+/*==============================
+        SUCCESS
+==============================*/
+
+function unlockSuccess(){
+
+    lockStatus.innerHTML="🔓 UNLOCKED";
+
+    lockStatus.style.color="#00ff88";
+
+    lockMessage.innerHTML="Access Granted.";
+
+    lockMessage.className="lock-message lock-success";
+
+    lockIcon.className="fa-solid fa-lock-open";
+
+    securityLevel.innerHTML="SAFE";
+
+    addActivity("Door unlocked successfully.");
+
+    pin="";
+
+    updateDisplay();
+
+    setTimeout(lockAgain,5000);
+
+}
+
+
+/*==============================
+        FAIL
+==============================*/
+
+function unlockFail(){
+
+    fail++;
+
+    failedAttempts.innerHTML=fail;
+
+    lockMessage.innerHTML="Wrong PIN.";
+
+    lockMessage.className="lock-message lock-error";
+
+    pin="";
+
+    updateDisplay();
+
+    addActivity("Wrong PIN entered.");
+
+    if(fail>=5){
+
+        securityLevel.innerHTML="WARNING";
+
+        securityLevel.style.color="#ff3b30";
+
+        addActivity("Too many failed attempts.");
+
+    }
+
+}
+
+
+/*==============================
+        AUTO LOCK
+==============================*/
+
+function lockAgain(){
+lockStatus.innerHTML="🔒 LOCKED";
+
+    lockStatus.style.color="#00ff88";
+
+    lockMessage.innerHTML="Child Lock Enabled.";
+
+    lockMessage.className="lock-message";
+
+    lockIcon.className="fa-solid fa-lock";
+
+}
+
+
+/*==============================
+        MOBILE APP
+==============================*/
+
+mobileUnlock.addEventListener("click",()=>{
+
+    unlockSuccess();
+
+    addActivity("Unlocked from mobile app.");
+
+});
+
+
+/*==============================
+        ACTIVITY LOG
+==============================*/
+
+function addActivity(text){
+
+    const li=document.createElement("li");
+
+    li.innerHTML="✔ "+text;
+
+    activityList.prepend(li);
+
+    while(activityList.children.length>6){
+
+        activityList.removeChild(activityList.lastChild);
+
+    }
+
+}
+
+
+/*==============================
+        LIVE SECURITY
+==============================*/
+
+const securityMessages=[
+
+"AI monitoring active.",
+
+"Door status synchronized.",
+
+"Cloud security enabled.",
+
+"Mobile connection stable.",
+
+"No suspicious activity.",
+
+"PIN verification ready.",
+
+"Security database updated."
+
+];
+
+setInterval(()=>{
+
+    const index=Math.floor(Math.random()*securityMessages.length);
+
+    addActivity(securityMessages[index]);
+
+},7000);
+
+
+/*==============================
+        LOCK ICON ANIMATION
+==============================*/
+
+setInterval(()=>{
+
+    lockIcon.style.transform="scale(1.1)";
+
+    setTimeout(()=>{
+
+        lockIcon.style.transform="scale(1)";
+
+    },300);
+
+},2500);
+
+
+/*==============================
+        BUTTON EFFECT
+==============================*/
+
+document.querySelectorAll(".keypad button").forEach(btn=>{
+
+    btn.addEventListener("mouseenter",()=>{
+
+        btn.style.transform="translateY(-3px)";
+
+    });
+
+    btn.addEventListener("mouseleave",()=>{
+
+        btn.style.transform="translateY(0)";
+
+    });
+
+});
+
+
+/*==============================
+        AUTO SECURITY LEVEL
+==============================*/
+
+setInterval(()=>{
+
+    if(fail===0){
+
+        securityLevel.innerHTML="HIGH";
+
+        securityLevel.style.color="#0d6efd";
+
+    }
+
+},3000);
+
+
+/*==============================
+        START
+==============================*/
+
+window.addEventListener("load",()=>{
+
+    console.log("Child Lock Ready");
+
+});

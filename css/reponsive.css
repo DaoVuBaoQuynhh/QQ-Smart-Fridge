@@ -881,3 +881,228 @@ padding:20px;
     }
 
 }
+
+/*==================================================
+            CHILD LOCK RESPONSIVE
+==================================================*/
+
+@media screen and (max-width:1200px){
+
+    .lock-wrapper{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .mobile-lock{
+        justify-content:center;
+    }
+
+    .security-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/*====================================
+            TABLET
+====================================*/
+
+@media screen and (max-width:992px){
+
+    .child-lock{
+        padding:90px 0;
+    }
+
+    .lock-panel{
+        padding:30px;
+    }
+
+    .lock-header h3{
+        font-size:24px;
+    }
+
+    .phone{
+        width:280px;
+    }
+
+    .phone-lock-icon{
+        font-size:70px;
+    }
+
+    .lock-bottom{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/*====================================
+            MOBILE
+====================================*/
+
+@media screen and (max-width:768px){
+
+    .child-lock{
+        padding:70px 20px;
+    }
+
+    .lock-wrapper{
+        grid-template-columns:1fr;
+    }
+
+    .lock-header{
+        flex-direction:column;
+        gap:10px;
+        text-align:center;
+    }
+
+    .lock-panel{
+        padding:25px;
+    }
+
+    .lock-icon{
+        width:110px;
+        height:110px;
+        font-size:50px;
+    }
+
+    .password-display{
+        font-size:28px;
+        letter-spacing:6px;
+    }
+
+    .keypad{
+        gap:12px;
+    }
+
+    .keypad button{
+        height:55px;
+        font-size:18px;
+    }
+
+    .phone{
+        width:260px;
+    }
+
+    .phone-body{
+        padding:30px;
+    }
+
+    .phone-lock-icon{
+        font-size:60px;
+    }
+
+    .security-grid{
+        grid-template-columns:1fr;
+    }
+
+    .lock-bottom{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+}
+
+/*====================================
+        SMALL MOBILE
+====================================*/
+
+@media screen and (max-width:576px){
+
+    .child-lock{
+        padding:60px 15px;
+    }
+
+    .lock-panel{
+        border-radius:20px;
+        padding:20px;
+    }
+
+    .lock-icon{
+        width:90px;
+        height:90px;
+        font-size:40px;
+    }
+
+    .password-display{
+        font-size:24px;
+    }
+
+    .keypad button{
+        height:50px;
+        font-size:16px;
+        border-radius:12px;
+    }
+
+    .phone{
+        width:230px;
+        border-radius:30px;
+    }
+
+    .phone-body{
+        padding:25px;
+    }
+
+    .phone-lock-icon{
+        font-size:50px;
+    }
+
+    #mobileUnlock{
+        padding:12px;
+        font-size:15px;
+    }
+
+    .security-card{
+        padding:20px;
+    }
+
+    .security-card h2{
+        font-size:28px;
+    }
+
+    .activity-card{
+        padding:25px;
+    }
+
+}
+
+/*====================================
+        EXTRA SMALL
+====================================*/
+
+@media screen and (max-width:400px){
+
+    .lock-header h3{
+        font-size:20px;
+    }
+
+    .lock-status{
+        font-size:15px;
+    }
+
+    .password-display{
+        font-size:20px;
+        letter-spacing:4px;
+}
+
+    .keypad button{
+        height:45px;
+        font-size:15px;
+    }
+
+    .phone{
+        width:210px;
+    }
+
+    .phone-lock-icon{
+        font-size:45px;
+    }
+
+    .security-card h2{
+        font-size:24px;
+    }
+
+    .activity-card h3{
+        font-size:18px;
+    }
+
+}
