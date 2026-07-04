@@ -1699,3 +1699,187 @@ window.addEventListener("load",()=>{
     console.log("Technical Specification Ready");
 
 });
+
+
+/*==================================================
+                CONTACT SECTION
+==================================================*/
+
+const contactForm = document.getElementById("contactForm");
+
+if(contactForm){
+
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const subjectInput = document.getElementById("subject");
+    const messageInput = document.getElementById("message");
+
+    contactForm.addEventListener("submit",function(e){
+
+        e.preventDefault();
+
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const subject = subjectInput.value.trim();
+        const message = messageInput.value.trim();
+
+        if(name==="" || email==="" || subject==="" || message===""){
+
+            alert("Please fill in all fields.");
+
+            return;
+
+        }
+
+        const emailPattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if(!emailPattern.test(email)){
+
+            alert("Invalid email address.");
+
+            emailInput.focus();
+
+            return;
+
+        }
+
+        const button=document.querySelector(".contact-btn");
+
+        button.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+
+        button.disabled=true;
+
+        setTimeout(()=>{
+
+            button.innerHTML='<i class="fa-solid fa-circle-check"></i> Message Sent';
+
+            button.style.background="#28a745";
+
+            alert("Thank you! Your message has been sent successfully.");
+
+            contactForm.reset();
+
+            setTimeout(()=>{
+
+                button.innerHTML='<i class="fa-solid fa-paper-plane"></i> Send Message';
+
+                button.style.background="";
+
+                button.disabled=false;
+
+            },2500);
+
+        },1800);
+
+    });
+
+}
+
+
+/*==================================
+        INPUT EFFECT
+==================================*/
+
+document.querySelectorAll(".form-group input,.form-group textarea")
+.forEach(input=>{
+
+    input.addEventListener("focus",()=>{
+
+        input.style.transform="scale(1.02)";
+
+    });
+
+    input.addEventListener("blur",()=>{
+
+        input.style.transform="scale(1)";
+
+    });
+
+});
+
+
+/*==================================
+        CONTACT CARD EFFECT
+==================================*/
+
+document.querySelectorAll(".contact-card").forEach(card=>{
+
+    card.addEventListener("mouseenter",()=>{
+
+        card.style.transform="translateY(-8px)";
+
+    });
+
+    card.addEventListener("mouseleave",()=>{
+
+        card.style.transform="translateY(0)";
+
+    });
+
+});
+
+
+/*==================================
+        BUTTON RIPPLE
+==================================*/
+
+const sendButton=document.querySelector(".contact-btn");
+
+if(sendButton){
+
+    sendButton.addEventListener("mouseenter",()=>{
+
+        sendButton.style.transform="translateY(-3px) scale(1.02)";
+
+    });
+
+    sendButton.addEventListener("mouseleave",()=>{
+
+        sendButton.style.transform="translateY(0) scale(1)";
+
+    });
+
+}
+/*==================================
+        SCROLL ANIMATION
+==================================*/
+
+const contactObserver=new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.style.opacity="1";
+
+            entry.target.style.transform="translateY(0)";
+
+        }
+
+    });
+
+},{threshold:.2});
+
+document.querySelectorAll(".contact-card,.contact-form,.contact-map")
+.forEach(item=>{
+
+    item.style.opacity="0";
+
+    item.style.transform="translateY(50px)";
+
+    item.style.transition=".8s";
+
+    contactObserver.observe(item);
+
+});
+
+
+/*==================================
+        START
+==================================*/
+
+window.addEventListener("load",()=>{
+
+    console.log("Contact Section Ready");
+
+});
