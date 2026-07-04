@@ -724,9 +724,375 @@ id="childLock">
 
 </section>
 
-        <section id="cooling">
+        <!-- ===================================================
+                    AI COOLING SYSTEM
+=================================================== -->
 
-        </section>
+<section class="cooling" id="cooling">
+
+    <div class="container">
+
+        <!-- Section Title -->
+
+        <div class="section-title">
+
+            <span class="section-subtitle">
+
+                QQ SMART AI
+
+            </span>
+
+            <h2>
+
+                AI Cooling System
+
+            </h2>
+
+            <p>
+
+                Artificial Intelligence automatically adjusts cooling
+                performance based on refrigerator usage, food storage
+                and outside weather.
+
+            </p>
+
+        </div>
+
+        <div class="cooling-wrapper">
+
+            <!-- ================= LEFT PANEL ================= -->
+
+            <div class="cooling-display">
+
+                <div class="display-header">
+
+                    <h3>
+
+                        AI Cooling Dashboard
+
+                    </h3>
+
+                    <span class="status-online">
+
+                        ● Online
+
+                    </span>
+
+                </div>
+
+                <div class="temperature-grid">
+
+                    <div class="temp-card">
+
+                        <span>Refrigerator</span>
+
+                        <h2 id="fridgeTemp">
+
+                            4°C
+
+                        </h2>
+
+                    </div>
+
+                    <div class="temp-card">
+
+                        <span>Freezer</span>
+
+                        <h2 id="freezerTemp">
+
+                            -18°C
+
+                        </h2>
+
+                    </div>
+
+                    <div class="temp-card">
+
+                        <span>Outside</span>
+
+                        <h2 id="outsideTemp">
+
+                            32°C
+
+                        </h2>
+
+                    </div>
+
+                </div>
+
+                <!-- Cooling Animation -->
+
+                <div class="fan-section">
+
+                    <div class="fan">
+
+                        <div class="blade blade1"></div>
+                        <div class="blade blade2"></div>
+                        <div class="blade blade3"></div>
+                        <div class="blade blade4"></div>
+
+                    </div>
+
+                    <p>
+
+                        AI Cooling Fan
+
+                    </p>
+
+                </div>
+
+                <!-- Cooling Progress -->
+
+                <div class="cool-progress">
+
+                    <label>
+
+                        Cooling Performance
+
+                    </label>
+
+                    <div class="progress-bar">
+
+                        <div id="coolProgress"></div>
+
+                    </div>
+
+                </div>
+
+                <!-- AI Status -->
+
+                <div class="ai-status">
+
+                    <h4>
+
+                        AI Processing
+
+                    </h4>
+
+                    <div class="processing-bar">
+<div id="aiProcess"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ================= RIGHT PANEL ================= -->
+
+            <div class="cooling-control">
+
+                <!-- Door -->
+
+                <div class="control-card">
+
+                    <h3>
+
+                        Door Sensor
+
+                    </h3>
+
+                    <p>
+
+                        Number of Door Opens
+
+                    </p>
+
+                    <h2 id="doorCount">
+
+                        12 Times
+
+                    </h2>
+
+                </div>
+
+                <!-- Food -->
+
+                <div class="control-card">
+
+                    <h3>
+
+                        Food Storage
+
+                    </h3>
+
+                    <div class="progress-bar">
+
+                        <div id="foodLevel"></div>
+
+                    </div>
+
+                    <span>
+
+                        80% Capacity
+
+                    </span>
+
+                </div>
+
+                <!-- Weather -->
+
+                <div class="control-card">
+
+                    <h3>
+
+                        Weather
+
+                    </h3>
+
+                    <div class="weather-box">
+
+                        ☀ Sunny
+
+                        <h2>
+
+                            32°C
+
+                        </h2>
+
+                    </div>
+
+                </div>
+
+                <!-- Mode -->
+
+                <div class="control-card">
+
+                    <h3>
+
+                        Cooling Mode
+
+                    </h3>
+
+                    <div class="mode-group">
+
+                        <button class="mode active">
+
+                            AUTO
+
+                        </button>
+
+                        <button class="mode">
+
+                            ECO
+
+                        </button>
+
+                        <button class="mode">
+
+                            TURBO
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- Slider -->
+
+                <div class="control-card">
+
+                    <h3>
+
+                        Manual Cooling
+
+                    </h3>
+
+                    <input
+                        type="range"
+                        min="0"
+                        max="100"
+                        value="70"
+                        id="coolSlider">
+
+                    <h2 id="sliderValue">
+
+                        70%
+
+                    </h2>
+
+                </div>
+
+                <!-- Energy -->
+
+                <div class="control-card">
+
+                    <h3>
+
+                        Energy Saving
+
+                    </h3>
+
+                    <div class="energy-box">
+
+                        <h2 id="energy">
+
+                            35%
+
+                        </h2>
+
+                        <p>
+
+                            Estimated Consumption
+
+                        </p>
+<strong>
+
+                            1.02 kWh/day
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <!-- AI Recommendation -->
+
+                <div class="control-card">
+
+                    <h3>
+
+                        AI Recommendation
+
+                    </h3>
+
+                    <ul>
+
+                        <li>
+
+                            ✔ Cooling optimized
+
+                        </li>
+
+                        <li>
+
+                            ✔ Weather Adaptation
+
+                        </li>
+
+                        <li>
+
+                            ✔ Food Freshness Protected
+
+                        </li>
+
+                        <li>
+
+                            ✔ Energy Saving Activated
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
         <section id="energy">
 

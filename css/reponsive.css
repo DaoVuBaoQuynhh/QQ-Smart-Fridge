@@ -139,3 +139,199 @@ height:220px;
 padding:20px;
 }
 }
+
+@media screen and (max-width:1200px){
+    .cooling-wrapper{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .cooling-display{
+        order:1;
+    }
+
+    .cooling-control{
+        order:2;
+    }
+}
+
+@media screen and (max-width:992px){
+    .cooling{
+        padding:90px 0;
+    }
+
+    .cooling .section-title h2{
+        font-size:40px;
+    }
+
+    .temperature-grid{
+        grid-template-columns:repeat(3,1fr);
+        gap:15px;
+    }
+
+    .temp-card{
+        padding:1px;
+
+    }
+
+    .temp-card h2{
+        font-size:28px;
+    }
+
+    .fan{
+        width:140px;
+        height:140px;
+    }
+
+    .control-card{
+        padding:22px;
+    }
+}
+
+@media screen and (max-width:768px){
+    .cooling{
+        padding:70px 20px;
+    }
+
+    .cooling .section-title{
+        margin-bottom:45px;
+    }
+
+    .cooling .section-title h2{
+        font-size:32px;
+    }
+
+    .cooling .section-title p{
+        font-size:15px;
+        line-height:28px;
+    }
+
+    .temperature-grid{
+        grid-template-columns:1fr;
+    }
+
+    .temp-card{
+        width:100%;
+    }
+
+    .display-header{
+        flex-direction:column;
+        gap:12px;
+        text-align:center;
+    }
+
+    .display-header h3{
+        font-size:24px;
+    }
+
+    .fan{
+        width:120px;
+        height:120px;
+    }
+
+    .blade{
+        height:48px;
+    }
+
+    .mode-group{
+        flex-direction:column;
+    }
+
+    .mode{
+        width:100%;
+    }
+
+    .control-card{
+        padding:18px;
+    }
+
+    .energy-box h2{
+        font-size:34px;
+    }
+}
+
+@media screen and (max-width:576px){
+    .cooling{
+        padding:60px 15px;
+    }
+
+    .cooling-display{
+        padding:22px;
+        border-radius:20px;
+    }
+
+    .temp-card{
+        padding:15px;
+    }
+
+    .temp-card h2{
+        font-size:24px;
+    }
+
+    .fan{
+        width:100px;
+        height:100px;
+        border-width:6px;
+    }
+
+    .blade{
+        width:18px;
+        height:42px;
+    }
+
+    .progress-bar{
+        height:10px;
+    }
+
+    .control-card{
+        padding:15px;
+        border-radius:16px;
+    }
+
+    .control-card h3{
+        font-size:18px;
+    }
+
+    .control-card h2{
+        font-size:24px;
+    }
+
+    .weather-box{
+        padding:15px;
+    }
+
+    .energy-box strong{
+        font-size:15px;
+    }
+}
+
+@media screen and (max-width:400px){
+    .cooling .section-title h2{
+        font-size:28px;
+    }
+
+    .fan{
+        width:90px;
+        height:90px;
+    }
+
+    .blade{
+        height:35px;
+}
+
+    .display-header h3{
+        font-size:20px;
+    }
+
+    .temp-card h2{
+        font-size:22px;
+    }
+
+    #sliderValue{
+        font-size:22px;
+    }
+
+    .energy-box h2{
+        font-size:28px;
+    }
+}
